@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="79a4484b-f229-444f-94b4-6016169cb1d5" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="hoopa-udaan-day34Flow" doc:id="cc97959c-62f1-489c-a7ab-7686ceec1abd" >
+		<http:listener doc:name="/hello" doc:id="a5580e27-5a2e-4916-a64a-a0d937b25405" config-ref="HTTP_Listener_config" path="/hello"/>
+		<set-payload value='${env}' doc:name="Set Payload" doc:id="6681b867-eba5-488a-9912-56c77fbf516c" />
+		<logger level="INFO" doc:name="Logger" doc:id="11a4d5f5-b8c8-45c2-9f24-4c94c71e9f10" message="#[payload]"/>
+	</flow>
+</mule>
