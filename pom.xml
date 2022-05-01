@@ -38,7 +38,7 @@
 						<workerType>${worker.type}</workerType>
 						<environment>${environment}</environment>
 						<muleVersion>${mule.version}</muleVersion>
-						<applicationName>${application.name}</applicationName>
+						<applicationName>${application.namee}</applicationName>
 						<objectStoreV2>true</objectStoreV2>
 					</cloudHubDeployment>
 				</configuration>
