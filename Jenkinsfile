@@ -20,7 +20,7 @@ pipeline {
                 ANYPOINT_CREDENTIALS = credentials("deploy-anypoint-user")
                     }
             steps {
-                bat "mvn clean package -DskipTests deploy -Dusername=${ANYPOINT_CREDENTIALS_USR} -Dpassword=${ANYPOINT_CREDENTIALS_PSW} -Denvironment=Sandbox -Dmule.version=4.4.0 -Dworkers=1 -Dworker.type=Micro -Dapplication.name=hoopa-udaan-day36-CI-CD -DmuleDeploy"
+                bat "mvn clean package -DskipTests deploy -Dusername=${ANYPOINT_CREDENTIALS_USR} -Dpassword=${ANYPOINT_CREDENTIALS_PSW} -Denvironment=Sandbox -Dmule.version=4.4.0 -Dworkers=1 -Dworker.type=Micro -Dapplication.name=hoopa-udaan-day36-CI-CD -DmuleDeploy -Denv=developer"
             
             }
         }
